@@ -3,12 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Demo\DemoController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Pos\SupplierController;
 
 
 Route::get('/', function () {
     return view('welcome');
 });
-
+ 
 
 Route::controller(DemoController::class)->group(function () {
     Route::get('/about', 'Index')->name('about.page')->middleware('check');
@@ -28,6 +29,13 @@ Route::controller(AdminController::class)->group(function () {
      
 });
 
+
+ // Admin All Route 
+Route::controller(SupplierController::class)->group(function () {
+    Route::get('/supplier/all', 'SupplierAll')->name('supplier.all');
+   ;
+     
+});
 
  
 

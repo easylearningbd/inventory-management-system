@@ -32,10 +32,10 @@ Route::controller(AdminController::class)->group(function () {
 
  // Admin All Route 
 Route::controller(SupplierController::class)->group(function () {
-    Route::get('/supplier/all', 'SupplierAll')->name('supplier.all');
-   ;
-    Route::get('/supplier/add', 'SupplierAdd')->name('supplier.add');
-   ; 
+    Route::get('/supplier/all', 'SupplierAll')->name('supplier.all'); 
+    Route::get('/supplier/add', 'SupplierAdd')->name('supplier.add'); 
+    Route::post('/supplier/store', 'SupplierStore')->name('supplier.store');
+ 
 });
 
  

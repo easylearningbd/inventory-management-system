@@ -85,8 +85,8 @@ Route::controller(ProductController::class)->group(function () {
     Route::get('/product/all', 'ProductAll')->name('product.all'); 
     Route::get('/product/add', 'ProductAdd')->name('product.add');
     Route::post('/product/store', 'ProductStore')->name('product.store');
-    Route::get('/category/edit/{id}', 'CategoryEdit')->name('category.edit');
-    Route::post('/category/update', 'CategoryUpdate')->name('category.update');
+    Route::get('/product/edit/{id}', 'ProductEdit')->name('product.edit');
+    Route::post('/product/update', 'ProductUpdate')->name('product.update');
     Route::get('/category/delete/{id}', 'CategoryDelete')->name('category.delete');
      
 });

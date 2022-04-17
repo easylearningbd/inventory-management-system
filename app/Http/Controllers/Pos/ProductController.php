@@ -54,5 +54,42 @@ class ProductController extends Controller
 
 
 
+    public function ProductEdit($id){
+
+        $supplier = Supplier::all();
+        $category = Category::all();
+        $unit = Unit::all();
+        $product = Product::findOrFail($id);
+        return view('backend.product.product_edit',compact('product','supplier','category','unit'));
+    } // End Method 
+
+
+
+    public function ProductUpdate(Request $request){
+
+        $product_id = $request->id;
+
+         Product::findOrFail($product_id)->update([
+
+            'name' => $request->name,
+            'supplier_id' => $request->supplier_id,
+            'unit_id' => $request->unit_id,
+            'category_id' => $request->category_id, 
+            'updated_by' => Auth::user()->id,
+            'updated_at' => Carbon::now(), 
+        ]);
+
+        $notification = array(
+            'message' => 'Product Updated Successfully', 
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('product.all')->with($notification); 
+
+
+    } // End Method 
+
+
+
 }
  

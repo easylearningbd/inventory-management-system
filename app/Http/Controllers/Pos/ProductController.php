@@ -21,6 +21,15 @@ class ProductController extends Controller
     } // End Method 
 
 
+    public function ProductAdd(){
+
+        $supplier = Supplier::all();
+        $category = Category::all();
+        $unit = Unit::all();
+        return view('backend.product.product_add',compact('supplier','category','unit'));
+    } // End Method 
+
+
 
 }
  

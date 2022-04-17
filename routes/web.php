@@ -72,9 +72,9 @@ Route::controller(CategoryController::class)->group(function () {
     Route::get('/category/all', 'CategoryAll')->name('category.all'); 
     Route::get('/category/add', 'CategoryAdd')->name('category.add');
     Route::post('/category/store', 'CategoryStore')->name('category.store');
-    Route::get('/unit/edit/{id}', 'UnitEdit')->name('unit.edit');
-    Route::post('/unit/update', 'UnitUpdate')->name('unit.update');
-    Route::get('/unit/delete/{id}', 'UnitDelete')->name('unit.delete');
+    Route::get('/category/edit/{id}', 'CategoryEdit')->name('category.edit');
+    Route::post('/category/update', 'CategoryUpdate')->name('category.update');
+    Route::get('/category/delete/{id}', 'CategoryDelete')->name('category.delete');
      
 });
 

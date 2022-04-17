@@ -7,6 +7,7 @@ use App\Http\Controllers\Pos\SupplierController;
 use App\Http\Controllers\Pos\CustomerController;
 use App\Http\Controllers\Pos\UnitController;
 use App\Http\Controllers\Pos\CategoryController;
+use App\Http\Controllers\Pos\ProductController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -70,6 +71,18 @@ Route::controller(UnitController::class)->group(function () {
 // Category All Route 
 Route::controller(CategoryController::class)->group(function () {
     Route::get('/category/all', 'CategoryAll')->name('category.all'); 
+    Route::get('/category/add', 'CategoryAdd')->name('category.add');
+    Route::post('/category/store', 'CategoryStore')->name('category.store');
+    Route::get('/category/edit/{id}', 'CategoryEdit')->name('category.edit');
+    Route::post('/category/update', 'CategoryUpdate')->name('category.update');
+    Route::get('/category/delete/{id}', 'CategoryDelete')->name('category.delete');
+     
+});
+
+
+// Product All Route 
+Route::controller(ProductController::class)->group(function () {
+    Route::get('/product/all', 'ProductAll')->name('product.all'); 
     Route::get('/category/add', 'CategoryAdd')->name('category.add');
     Route::post('/category/store', 'CategoryStore')->name('category.store');
     Route::get('/category/edit/{id}', 'CategoryEdit')->name('category.edit');

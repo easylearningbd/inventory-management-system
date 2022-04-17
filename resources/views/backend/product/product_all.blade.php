@@ -47,9 +47,9 @@
                         <tr>
                             <td> {{ $key+1}} </td>
                             <td> {{ $item->name }} </td> 
-                             <td> {{ $item->supplier_id }} </td> 
-                              <td> {{ $item->unit_id }} </td> 
-                               <td> {{ $item->category_id }} </td> 
+                            <td> {{ $item['supplier']['name'] }} </td> 
+                            <td> {{ $item['unit']['name'] }} </td> 
+                            <td> {{ $item['category']['name'] }} </td> 
                             <td>
    <a href="{{ route('supplier.edit',$item->id) }}" class="btn btn-info sm" title="Edit Data">  <i class="fas fa-edit"></i> </a>
 

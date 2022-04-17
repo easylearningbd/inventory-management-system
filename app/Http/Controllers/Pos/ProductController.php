@@ -90,6 +90,19 @@ class ProductController extends Controller
     } // End Method 
 
 
+    public function ProductDelete($id){
+       
+       Product::findOrFail($id)->delete();
+            $notification = array(
+            'message' => 'Product Deleted Successfully', 
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification); 
+
+    } // End Method 
+
+
 
 }
  

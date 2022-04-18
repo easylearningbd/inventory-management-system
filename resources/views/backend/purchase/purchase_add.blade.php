@@ -92,6 +92,28 @@
 </div>
 </div>
 
+
+<script type="text/javascript">
+    $(function(){
+        $(document).on('change','#supplier_id',function(){
+            var supplier_id = $(this).val();
+            $.ajax({
+                url:"{{ route('get-category') }}",
+                type: "GET",
+                data:{supplier_id:supplier_id},
+                success:function(data){
+                    var html = '<option value="">Select Category</option>';
+                    $.each(data,function(key,v){
+                        html += '<option value=" '+v.category_id+' "> '+v.category.name+'</option>';
+                    });
+                    $('#category_id').html(html);
+                }
+            })
+        });
+    });
+
+</script>
+
  
 
 

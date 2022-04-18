@@ -22,6 +22,13 @@ class DefaultController extends Controller
         return response()->json($allCategory);
     } // End Mehtod 
 
+     public function GetProduct(Request $request){
+
+        $category_id = $request->category_id; 
+        $allProduct = Product::where('category_id',$category_id)->get();
+        return response()->json($allProduct);
+    } // End Mehtod 
+
 
 
 

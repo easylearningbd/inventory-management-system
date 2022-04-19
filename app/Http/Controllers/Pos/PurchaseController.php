@@ -68,6 +68,26 @@ class PurchaseController extends Controller
         'alert-type' => 'success'
     );
     return redirect()->route('purchase.all')->with($notification); 
+    } // End Method 
+
+
+    public function PurchaseDelete($id){
+
+        Purchase::findOrFail($id)->delete();
+
+         $notification = array(
+        'message' => 'Purchase Iteam Deleted Successfully', 
+        'alert-type' => 'success'
+    );
+    return redirect()->back()->with($notification); 
+
+    } // End Method 
+
+
+    public function PurchasePending(){
+
+        $allData = Purchase::orderBy('date','desc')->orderBy('id','desc')->where('status','0')->get();
+        return view('backend.purchase.purchase_pending',compact('allData'));
     }// End Method 
 
 

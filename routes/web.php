@@ -10,6 +10,7 @@ use App\Http\Controllers\Pos\CategoryController;
 use App\Http\Controllers\Pos\ProductController;
 use App\Http\Controllers\Pos\PurchaseController;
 use App\Http\Controllers\Pos\DefaultController;
+use App\Http\Controllers\Pos\InvoiceController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -94,7 +95,7 @@ Route::controller(ProductController::class)->group(function () {
 });
 
 
- 
+  
 // Purchase All Route 
 Route::controller(PurchaseController::class)->group(function () {
     Route::get('/purchase/all', 'PurchaseAll')->name('purchase.all'); 
@@ -105,6 +106,15 @@ Route::controller(PurchaseController::class)->group(function () {
     Route::get('/purchase/approve/{id}', 'PurchaseApprove')->name('purchase.approve');
      
 });
+
+
+// Invoice All Route 
+Route::controller(InvoiceController::class)->group(function () {
+    Route::get('/invoice/all', 'InvoiceAll')->name('invoice.all'); 
+    
+     
+});
+
 
 
 

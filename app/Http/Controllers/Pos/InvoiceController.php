@@ -46,6 +46,37 @@ class InvoiceController extends Controller
     } // End Method
 
 
+    public function InvoiceStore(Request $request){
+
+        if ($request->category_id == null) {
+
+           $notification = array(
+            'message' => 'Sorry You do not select any item', 
+            'alert-type' => 'error'
+        );
+        return redirect()->back()->with($notification);
+
+        } else{
+            if ($request->paid_amount > $request->estimated_amount) {
+
+               $notification = array(
+            'message' => 'Sorry Paid Amount is Maximum the total price', 
+            'alert-type' => 'error'
+        );
+        return redirect()->back()->with($notification);
+        
+            } else {
+
+
+
+
+
+            }
+        }
+
+    } // End Method
+
+
 
 
 }

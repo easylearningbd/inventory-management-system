@@ -37,6 +37,8 @@
                             <th>Date </th>
                             <th>Desctipion</th>  
                             <th>Amount</th>
+                            <th>Status</th>
+                            <th>Action</th>
                             
                         </thead>
 
@@ -54,6 +56,20 @@
                  <td>  {{ $item->description }} </td> 
 
                 <td>  $ {{ $item['payment']['total_amount'] }} </td>
+
+                 <td> @if($item->status == '0')
+                    <span class="btn btn-warning">Pending</span>
+                    @elseif($item->status == '1')
+                    <span class="btn btn-success">Approved</span>
+                    @endif </td>
+
+      <td>
+       @if($item->status == '0')
+ <a href="{{ route('purchase.delete',$item->id) }}" class="btn btn-dark sm" title="Approved Data" >  <i class="fas fa-check-circle"></i> </a>
+
+<a href="{{ route('purchase.delete',$item->id) }}" class="btn btn-danger sm" title="Delete Data" id="delete">  <i class="fas fa-trash-alt"></i> </a>
+@endif  
+</td>
                
             </tr>
                         @endforeach

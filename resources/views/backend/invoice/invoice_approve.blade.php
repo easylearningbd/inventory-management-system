@@ -42,7 +42,43 @@
              </tr>
         </tbody>
          
-     </table>            
+     </table>    
+
+
+     <form>
+         
+         <table border="1" class="table table-dark" width="100%">
+            <thead>
+                <tr>
+                    <th class="text-center">Sl</th>
+                    <th class="text-center">Category</th>
+                    <th class="text-center">Product Name</th>
+                    <th class="text-center">Current Stock</th>
+                    <th class="text-center">Quantity</th>
+                    <th class="text-center">Unit Price </th>
+                    <th class="text-center">Total Price</th>
+                </tr>
+                
+            </thead>
+    <tbody>
+        @foreach($invoice['invoice_details'] as $key => $details)
+        <tr>
+            <td class="text-center">{{ $key+1 }}</td>
+            <td class="text-center">{{ $details['category']['name'] }}</td>
+            <td class="text-center">{{ $details['product']['name'] }}</td>
+            <td class="text-center">{{ $details['product']['quantity'] }}</td>
+            <td class="text-center">{{ $details->selling_qty }}</td>
+            <td class="text-center">{{ $details->unit_price }}</td>
+            <td class="text-center">{{ $details->selling_price }}</td>
+        </tr>
+        @endforeach
+    </tbody>
+             
+         </table>
+ 
+
+
+     </form> 
 
                     
         

@@ -11,6 +11,7 @@ use App\Http\Controllers\Pos\ProductController;
 use App\Http\Controllers\Pos\PurchaseController;
 use App\Http\Controllers\Pos\DefaultController;
 use App\Http\Controllers\Pos\InvoiceController;
+use App\Http\Controllers\Pos\StockController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -128,6 +129,15 @@ Route::controller(InvoiceController::class)->group(function () {
      
 });
 
+
+
+
+
+// Stock All Route 
+Route::controller(StockController::class)->group(function () {
+    Route::get('/stock/report', 'StockReport')->name('stock.report'); 
+ 
+});
 
 
 

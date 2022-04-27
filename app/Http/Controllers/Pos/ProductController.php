@@ -10,7 +10,7 @@ use App\Models\Supplier;
 use App\Models\Unit;
 use Auth;
 use Illuminate\Support\Carbon;
-
+ 
 class ProductController extends Controller
 {
     public function ProductAll(){

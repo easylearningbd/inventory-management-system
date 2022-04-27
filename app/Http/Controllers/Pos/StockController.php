@@ -21,6 +21,14 @@ class StockController extends Controller
     } // End Method
 
 
+    public function StockReportPdf(){
+
+        $allData = Product::orderBy('supplier_id','asc')->orderBy('category_id','asc')->get();
+        return view('backend.pdf.stock_report_pdf',compact('allData'));
+
+    } // End Method
+
+
 
 }
  

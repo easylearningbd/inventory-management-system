@@ -23,7 +23,7 @@
             <div class="card">
                 <div class="card-body">
 
-    <a href="{{ route('product.add') }}" class="btn btn-dark btn-rounded waves-effect waves-light" style="float:right;"><i class="fa fa-print"> Stock Report Print </i></a> <br>  <br>               
+    <a href="{{ route('stock.report.pdf') }}" target="_blank" class="btn btn-dark btn-rounded waves-effect waves-light" style="float:right;"><i class="fa fa-print"> Stock Report Print </i></a> <br>  <br>               
 
                     <h4 class="card-title">Stock Report </h4>
                     
@@ -49,8 +49,8 @@
                             <td> {{ $item['supplier']['name'] }} </td> 
                             <td> {{ $item['unit']['name'] }} </td> 
                             <td> {{ $item['category']['name'] }} </td> 
-                             <td> {{ $item->name }} </td> 
-                              <td> {{ $item->quantity }} </td> 
+                            <td> {{ $item->name }} </td> 
+                            <td> {{ $item->quantity }} </td> 
                             
                            
                         </tr>

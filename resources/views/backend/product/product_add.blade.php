@@ -49,7 +49,7 @@
                @endforeach
                 </select>
         </div>
-    </div>
+    </div> 
   <!-- end row -->
 
 

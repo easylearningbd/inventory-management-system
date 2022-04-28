@@ -35,7 +35,9 @@
                             <th>Supplier Name </th>
                             <th>Unit</th>
                             <th>Category</th> 
-                            <th>Product Name</th>  
+                            <th>Product Name</th> 
+                            <th>In Qty</th> 
+                            <th>Out Qty </th>  
                             <th>Stock </th>
                             
                         </thead>
@@ -44,12 +46,20 @@
                         <tbody>
                         	 
                         	@foreach($allData as $key => $item)
+@php
+$buying_total = App\Models\Purchase::where('category_id',$item->category_id)->where('product_id',$item->id)->where('status','1')->sum('buying_qty');
+
+$selling_total = App\Models\InvoiceDetail::where('category_id',$item->category_id)->where('product_id',$item->id)->where('status','1')->sum('selling_qty');
+@endphp
+
                         <tr>
                             <td> {{ $key+1}} </td> 
                             <td> {{ $item['supplier']['name'] }} </td> 
                             <td> {{ $item['unit']['name'] }} </td> 
                             <td> {{ $item['category']['name'] }} </td> 
                             <td> {{ $item->name }} </td> 
+                            <td> {{ $buying_total  }} </td> 
+                            <td> {{ $selling_total }} </td> 
                             <td> {{ $item->quantity }} </td> 
                             
                            

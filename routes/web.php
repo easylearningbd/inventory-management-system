@@ -62,6 +62,7 @@ Route::controller(CustomerController::class)->group(function () {
     Route::get('/customer/delete/{id}', 'CustomerDelete')->name('customer.delete');
 
     Route::get('/credit/customer', 'CreditCustomer')->name('credit.customer');
+    Route::get('/credit/customer/print/pdf', 'CreditCustomerPrintPdf')->name('credit.customer.print.pdf');
      
 });
 

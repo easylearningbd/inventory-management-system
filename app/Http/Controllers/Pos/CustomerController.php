@@ -139,5 +139,13 @@ class CustomerController extends Controller
     } // End Method
 
 
+    public function CreditCustomerPrintPdf(){
+
+        $allData = Payment::whereIn('paid_status',['full_due','partial_paid'])->get();
+        return view('backend.pdf.customer_credit_pdf',compact('allData'));
+
+    }// End Method
+
+
 }
  

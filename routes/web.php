@@ -24,6 +24,10 @@ Route::controller(DemoController::class)->group(function () {
 });
 
 
+ Route::middleware('auth')->group(function(){
+
+
+
  // Admin All Route 
 Route::controller(AdminController::class)->group(function () {
     Route::get('/admin/logout', 'destroy')->name('admin.logout');
@@ -149,6 +153,8 @@ Route::controller(StockController::class)->group(function () {
 });
 
 
+
+ }); // End Group Middleware
 
 
 

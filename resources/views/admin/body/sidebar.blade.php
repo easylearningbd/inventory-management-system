@@ -38,6 +38,7 @@
             </a>
             <ul class="sub-menu" aria-expanded="false">
                 <li><a href="{{ route('customer.all') }}">All Customers</a></li>
+                 <li><a href="{{ route('credit.customer') }}">Credit Customers</a></li>
                
             </ul>
         </li>

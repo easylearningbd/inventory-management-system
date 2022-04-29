@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Customer;
 use Auth;
 use Illuminate\Support\Carbon;
-use Image;
+use Image; 
+use App\Models\Payment;
 
 class CustomerController extends Controller
 {
@@ -130,7 +131,12 @@ class CustomerController extends Controller
     } // End Method
 
 
+    public function CreditCustomer(){
 
+        $allData = Payment::whereIn('paid_status',['full_due','partial_paid'])->get();
+        return view('backend.customer.customer_credit',compact('allData'));
+
+    } // End Method
 
 
 }

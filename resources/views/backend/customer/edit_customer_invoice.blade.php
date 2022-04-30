@@ -1,7 +1,7 @@
 @extends('admin.admin_master')
 @section('admin')
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
- 
+
  <div class="page-content">
                     <div class="container-fluid">
 
@@ -78,6 +78,10 @@
 
    <div class="row">
         <div class="col-12">
+
+   <form method="post" action="{{ route('customer.update.invoice',$payment->invoice_id)}}">
+          @csrf     
+
             <div>
                 <div class="p-2">
                      
@@ -164,6 +168,7 @@ $invoice_details = App\Models\InvoiceDetail::where('invoice_id',$payment->invoic
                 <td class="no-line"></td>
                 <td class="no-line text-center">
                     <strong>Due Amount</strong></td>
+                    <input type="hidden" name="new_paid_amount" value="{{$payment->due_amount}}">
                 <td class="no-line text-end">${{ $payment->due_amount }}</td>
             </tr>
             <tr>
@@ -219,8 +224,10 @@ $invoice_details = App\Models\InvoiceDetail::where('invoice_id',$payment->invoic
                      
                 </div>
             </div>
+ </form>
 
-        </div>
+
+        </div> 
     </div> <!-- end row -->
  
  

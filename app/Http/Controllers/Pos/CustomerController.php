@@ -156,5 +156,23 @@ class CustomerController extends Controller
     }// End Method
 
 
+    public function CustomerUpdateInvoice(Request $request,$invoice_id){
+
+        if ($request->new_paid_amount < $request->paid_amount) {
+
+            $notification = array(
+            'message' => 'Sorry You Paid Maximum Value', 
+            'alert-type' => 'error'
+        );
+
+        return redirect()->back()->with($notification); 
+        } else{
+
+            
+        }
+
+    }// End Method
+
+
 }
  

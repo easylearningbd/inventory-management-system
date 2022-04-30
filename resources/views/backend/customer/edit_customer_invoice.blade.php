@@ -1,6 +1,7 @@
 @extends('admin.admin_master')
 @section('admin')
-
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ 
  <div class="page-content">
                     <div class="container-fluid">
 
@@ -179,15 +180,49 @@ $invoice_details = App\Models\InvoiceDetail::where('invoice_id',$payment->invoic
                         </table>
                     </div>
 
+
+
+
+        <div class="row">
+
+            <div class="form-group col-md-3">
+                  <label> Paid Status </label>
+                    <select name="paid_status" id="paid_status" class="form-select">
+                        <option value="">Select Status </option>
+                        <option value="full_paid">Full Paid </option> 
+                        <option value="partial_paid">Partial Paid </option>
+                        
+                    </select>
+        <input type="text" name="paid_amount" class="form-control paid_amount" placeholder="Enter Paid Amount" style="display:none;">
+            </div>
+
+
+            <div class="form-group col-md-3">
+                <div class="md-3">
+                <label for="example-text-input" class="form-label">Date</label>
+                 <input class="form-control example-date-input" placeholder="YYYY-MM-DD"  name="date" type="date"  id="date">
+            </div>
+            </div>
+
+            <div class="form-group col-md-3">
+                 <div class="md-3" style="padding-top: 30px;">
+                <button type="submit" class="btn btn-info">Invoice Update</button>
+            </div>
+                
+            </div>
+            
+        </div>
+
+
+
+
                      
                 </div>
             </div>
 
         </div>
     </div> <!-- end row -->
-
-
-
+ 
  
 
 
@@ -199,6 +234,20 @@ $invoice_details = App\Models\InvoiceDetail::where('invoice_id',$payment->invoic
 
                     </div> <!-- container-fluid -->
                 </div>
+
+
+ <script type="text/javascript">
+    $(document).on('change','#paid_status', function(){
+        var paid_status = $(this).val();
+        if (paid_status == 'partial_paid') {
+            $('.paid_amount').show();
+        }else{
+            $('.paid_amount').hide();
+        }
+    }); 
+
+</script>
+
 
 
 @endsection

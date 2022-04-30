@@ -147,5 +147,14 @@ class CustomerController extends Controller
     }// End Method
 
 
+
+    public function CustomerEditInvoice($invoice_id){
+
+        $payment = Payment::where('invoice_id',$invoice_id)->first();
+        return view('backend.customer.edit_customer_invoice',compact('payment'));
+
+    }// End Method
+
+
 }
  

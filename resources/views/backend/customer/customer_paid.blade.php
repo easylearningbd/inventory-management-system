@@ -23,7 +23,7 @@
             <div class="card">
                 <div class="card-body">
 
-    <a href="{{ route('customer.add') }}" class="btn btn-dark btn-rounded waves-effect waves-light" style="float:right;"><i class="fas fa-plus-circle"> Print Paid Customer </i></a> <br>  <br>               
+    <a href="{{ route('paid.customer.print.pdf') }}" class="btn btn-dark btn-rounded waves-effect waves-light" target="_black" style="float:right;"><i class="fa fa-print"> Print Paid Customer </i></a> <br>  <br>               
 
                     <h4 class="card-title">Paid All Data </h4>
                     
@@ -51,7 +51,7 @@
                             <td> {{ date('d-m-Y',strtotime($item['invoice']['date'])) }} </td> 
                             <td> {{ $item->due_amount }} </td> 
                             <td>
-   <a href="{{ route('customer.edit',$item->id) }}" class="btn btn-info sm" title="Edit Data">  <i class="fa fa-eye"></i> </a>
+   <a href="{{ route('customer.invoice.details.pdf',$item->invoice_id) }}" class="btn btn-info sm" target="_black" title="Customer Details">  <i class="fa fa-eye"></i> </a>
  
 
                             </td>

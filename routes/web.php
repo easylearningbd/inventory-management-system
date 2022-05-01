@@ -70,6 +70,7 @@ Route::controller(CustomerController::class)->group(function () {
      Route::get('/customer/invoice/details/{invoice_id}', 'CustomerInvoiceDetails')->name('customer.invoice.details.pdf');
 
       Route::get('/paid/customer', 'PaidCustomer')->name('paid.customer');
+      Route::get('/paid/customer/print/pdf', 'PaidCustomerPrintPdf')->name('paid.customer.print.pdf');
      
 });
 

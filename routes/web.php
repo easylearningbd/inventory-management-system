@@ -71,6 +71,8 @@ Route::controller(CustomerController::class)->group(function () {
 
       Route::get('/paid/customer', 'PaidCustomer')->name('paid.customer');
       Route::get('/paid/customer/print/pdf', 'PaidCustomerPrintPdf')->name('paid.customer.print.pdf');
+
+       Route::get('/customer/wise/report', 'CustomerWiseReport')->name('customer.wise.report');
      
 });
 

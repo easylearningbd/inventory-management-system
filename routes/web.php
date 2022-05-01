@@ -68,6 +68,8 @@ Route::controller(CustomerController::class)->group(function () {
      Route::post('/customer/update/invoice/{invoice_id}', 'CustomerUpdateInvoice')->name('customer.update.invoice');
 
      Route::get('/customer/invoice/details/{invoice_id}', 'CustomerInvoiceDetails')->name('customer.invoice.details.pdf');
+
+      Route::get('/paid/customer', 'PaidCustomer')->name('paid.customer');
      
 });
 

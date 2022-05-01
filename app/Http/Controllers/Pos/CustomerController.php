@@ -209,6 +209,11 @@ class CustomerController extends Controller
 
     }// End Method
 
+    public function PaidCustomer(){
+        $allData = Payment::where('paid_status','!=','full_due')->get();
+        return view('backend.customer.customer_paid',compact('allData'));
+    }// End Method
+
 
 }
  

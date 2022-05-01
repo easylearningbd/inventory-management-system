@@ -39,7 +39,7 @@
 
 <!--  /// Customer Credit Wise  -->
     <div class="show_credit" style="display:none">
-        <form method="GET" action="{{ route('supplier.wise.pdf') }}" id="myForm" target="_blank" >
+        <form method="GET" action="{{ route('customer.wise.credit.report') }}" id="myForm" target="_blank" >
 
             <div class="row">
                 <div class="col-sm-8 form-group">

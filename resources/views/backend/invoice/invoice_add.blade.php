@@ -135,7 +135,7 @@
                         <option value="">Select Status </option>
                         <option value="full_paid">Full Paid </option>
                         <option value="full_due">Full Due </option>
-                        <option value="partial_paid">Partial Paid </option>
+                         <option value="partial_paid">Partial Paid </option>
                         
                     </select>
         <input type="text" name="paid_amount" class="form-control paid_amount" placeholder="Enter Paid Amount" style="display:none;">
